@@ -1,5 +1,5 @@
 RPi pantalla 7":
-https://qastack.mx/raspberrypi/46225/adjusting-the-brightness-of-the-official-touchscreen-display
+https://qastack.mx/raspberrypi/46225/adjusting-the-brightness-of-the-official-touchscreen-display/
 
 
 C# Online Compiler:

@@ -1,0 +1,5 @@
+AES:
+https://www.baeldung.com/java-aes-encryption-decryption
+
+
+https://www.section.io/engineering-education/implementing-aes-encryption-and-decryption-in-java/

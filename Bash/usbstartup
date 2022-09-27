@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo mount /dev/sdb1 ~/shared/tstusb/
+sudo mount /dev/sda1 ~/shared/sd32gb/

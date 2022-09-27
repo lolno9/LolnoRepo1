@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Titulos del Documento</title>
+     <!-- <link rel="stylesheet" href="css/archivo.css" />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="icon" href="favicon.png" /> //-->
+  </head>
+  <body>
+     <!-- <script src="js/script.js"></script>    //-->
+  </body>
+</html>

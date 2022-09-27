@@ -1,0 +1,2 @@
+create user admin@localhost identified by secret;
+grant all privileges on *.* to admin@localhost with grant option;

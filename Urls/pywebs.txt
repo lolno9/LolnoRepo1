@@ -1,0 +1,3 @@
+https://realpython.com/python-ai-neural-network/
+
+C:\Users\amarin\AppData\Local\Programs\Python\Python310

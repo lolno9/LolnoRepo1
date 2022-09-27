@@ -1,0 +1,39 @@
+asymmetric encrypt/decrypt
+openssl genrsa -out file 2048
+generate key
+
+openssl rsa -in file (-des3) -out file (-aes128)
+enter pass
+get encrypted private key
+
+openssl rsa -in file -pubout -out file
+get public key
+
+share keys
+
+openssl rsautl -encrypt -in file -out encfile -inkey extpubkey -pubin
+encypt with public external key entering a public key
+
+openssl rsautl -decrypt -in encfile -out file -inkey internalprivatekey
+decrypt with imternal private key (must be encrypted with internal pub key)
+
+openssl rsautl -sign -in file -out signedfile -inkey internalprivatekey
+sign file with internal private key
+
+openssl rsautl -verify -in signedfile -out file -inkey internalpublickey -pubin
+verify the signed file with the internal public key
+
+generate the key, then extract the encrypted private key (for more security) with some algorithm,
+then extract the public key.
+Share the public key.
+Sign something with our private key
+Encrypt signed something with the public key of the reciever
+Decypt something with our private key
+Verify somthing with the public key of the sender
+
+Verify public key
+directly from private key:
+openssl pkey -pubout -in privatekey | openssl sha256
+
+from public key file:
+openssl pkey -in publickey -pubin | openssl sha256

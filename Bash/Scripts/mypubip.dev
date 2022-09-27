@@ -1,0 +1,28 @@
+#!/bin/sh
+#todo store actual ip and send it only if it changes
+hora=$(date +"%T-%d/%m/%y");
+ipdir=$(host myip.opendns.com resolver1.opendns.com | awk '{print $4}' | tail -1 );
+#prin
+        {
+                echo "Subject: " "$hora";
+                echo "$ipdir";
+        } | ssmtp -v lolno9@gmail.com;
+while true; do
+        hora=$(date +"%T-%d/%m/%y");
+        ipdir2=$(host myip.opendns.com resolver1.opendns.com | awk '{print $4}' | tail -1 );
+        if ["$ipdir" != "$ipdir2"]; then
+                $ipdir = $ipdir2;
+                {
+                        echo "Subject: " "$hora";
+                	echo "$ipdir";
+                } | ssmtp -v lolno9@gmail.com;
+                {
+		echo "Subject: " "$hora";
+                echo "$ipdir";
+		}
+		sleep 900;
+        else
+                sleep 1800;
+        fi
+done;
+

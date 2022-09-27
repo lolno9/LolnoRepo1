@@ -1,0 +1,1 @@
+python3 shared/sd32gb/luma.examples/examples/matrix.py --width 128 --height 128 --rotate 2 --display sh1106

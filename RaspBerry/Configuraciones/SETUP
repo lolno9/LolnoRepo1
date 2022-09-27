@@ -1,0 +1,3 @@
+#iniciar apache daemon y vncserver
+systemctl start apache2.service
+vncserver :1

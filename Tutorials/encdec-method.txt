@@ -1,0 +1,35 @@
+get random 16 bytes hex value for the iv
+openssl rand -hex 16 > iv
+
+get random 32 bytes hex value for the key
+openssl rand -hex 32 > key
+gpg --gen-random --armor 2 256
+
+encrypt with symmetrical aes256 algorithm specify the iv and key in hex format
+openssl enc -aes-256-cbc -pbkdf2 -in Data -a -e -nosalt -iv $(cat hexivfile) -K $(cat hexkeyfile) -p -out EncData
+
+decrypt with symmetrical aes256 algorithm specify the iv and key in hex format
+openssl enc -aes-256-cbc -pbkdf2 -in EncData -a -d -nosalt -iv $(cat hexivfile) -K $(cat hexkeyfile) -p -out DecData
+
+To send the encrypted data
+encrypt the key and the iv files to send with the encrypted data
+openssl rsautl -encrypt -in iv -out iv.enc -inkey destinationpublickey -pubin
+openssl rsautl -encrypt -in key -out key.enc -inkey destinationpublickey -pubin
+
+To decrypt recieved encrypted data
+openssl rsautl -decrypt -in iv.enc -out iv -inkey sourceprivatekey
+openssl rsautl -decrypt -in key.enc -out key -inkey sourceprivatekey
+
+order should be:
+Generate iv and key, get hash of the files
+Encrypt data with generated iv and key, get hash of data and encrypted data
+Encrypt key and iv files with the public key of the reciever, get hash of encrypted files
+Send encrypted data, iv, key and hash info
+Check hashs of encrypted iv, key and data files
+Decrypt the files and check their hash
+Decrypt the encrypted data with the iv and key files and check their hash
+
+gpg --gen-random --armor 2 256 > key
+cat key | gpg --symmetric --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --s2k-cipher-algo AES256 --passphrase-fd 0 -o output/.gpg --batch intput/file
+cat key | gpg --decrypt -o output/file --passphrase-fd 0 --batch input/.gpg
+

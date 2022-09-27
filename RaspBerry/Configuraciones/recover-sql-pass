@@ -1,0 +1,7 @@
+service mysqld stop
+mysqld_safe --skip-grant-tables --skip-networking&
+mysql -u root
+	use mysql;
+	update user set password=PASSWORD('pass') where user='user';
+	exit
+service mysqld restart

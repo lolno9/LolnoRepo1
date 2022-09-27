@@ -1,0 +1,102 @@
+import ejercicios1
+import sys
+
+print(sys.version)
+
+# test ejercicio1 WORKS
+""" 
+num1 = 3
+num2 = 1
+ejer1 = ejercicios1.Ejercicios1(1,2,3)
+n1 = str(ejer1.max(num1,num2))
+ejer1_2 = ejercicios1.Ejercicios1(num1,num2,num3)
+n2 = str(ejer1_2.max(6,9))
+print("")
+print("El numero mas grande de el ejemplo 1 es: "+n1)
+print("El numero mas grande de el ejemplo 2 es: "+n2)
+"""
+# test ejercicio2 WORKS
+""" 
+num1 = 11
+num2 = 2
+num3 = 7
+ejer2 = ejercicios1.Ejercicios1(1,2,3)
+maxdetres = str(ejer2.max_de_tres(num1,num2,num3))
+print("El numero mas grande de los tres es: "+maxdetres)
+"""
+#test ejercicio3 WORKS
+""" 
+cadena = "Hola que tal"
+lista = [1,2,3,4,5,6,7,8,9,0]
+ejer3 = ejercicios1.Ejercicios1(1,2,3)
+print(cadena)
+num1 = ejer3.longitud(cadena)
+print("Longitud: "+str(num1))
+print("Lista de 1 a 0 por orden")
+num2 = ejer3.longitud(lista)
+print("Longitud: ",str(num2))
+"""
+#test ejercicio4 WORKS
+""" 
+c1 = "a"
+c2 = "b"
+c3 = "z"
+c4 = "u"
+ejer4 = ejercicios1.Ejercicios1(1,2,3)
+print("c1 : a = "+str(ejer4.esvocal(c1)))
+print("c2 : b = "+str(ejer4.esvocal(c2)))
+print("c3 : z = "+str(ejer4.esvocal(c3)))
+print("c4 : u = "+str(ejer4.esvocal(c4)))
+"""
+#test ejercicio5 WORKS
+""" 
+lista = [1,2,3,4]
+ejer5 = ejercicios1.Ejercicios1(1,2,3)
+resum = ejer5.sum(lista)
+resmul = ejer5.multip(lista)
+print("Lista: "+" ".join(str(item) for item in lista)) #ambos funcionan igual
+print("Lista: "+" ".join(map(str, lista)))
+print("Suma : "+str(resum)+" Multiplicacion: "+str(resmul))
+"""
+#test ejercicio6 WORKS
+""" 
+cadena = "FRASE"
+ejer6 = ejercicios1.Ejercicios1(1,2,3)
+result = ejer6.inversa(cadena)
+print("La inversa de: "+str(cadena)+" es: "+result)
+"""
+# test ejercicio7 WORKS
+""" 
+cadena1 = "radar"
+cadena2 = "submarino"
+ejer7 = ejercicios1.Ejercicios1(1,2,3)
+resc1 = ejer7.es_palindromo(cadena1)
+resc2 = ejer7.es_palindromo(cadena2)
+print(cadena1+": "+str(resc1)+"   "+cadena2+": "+str(resc2))
+"""
+#test ejercicio8 WORKS
+""" 
+lista1 = [1,2,3,4,5,6]
+lista2 = [9,33,21,2,44]
+lista4 = ["a","b","c"]
+lista5 = ["d","e","f"]
+lista6 = ["e","z","c"]
+ejer8 = ejercicios1.Ejercicios1(1,2,3)
+print("lista1-lista2: "+str(ejer8.superposicion(lista1,lista2)))
+print("lista5-lista6: "+str(ejer8.superposicion(lista5,lista6)))
+print("lista4-lista5: "+str(ejer8.superposicion(lista4,lista5)))
+print("lista1-lista6: "+str(ejer8.superposicion(lista1,lista6)))
+"""
+#test ejercicio9 WORKS 
+""" 
+char = "T"
+num = 5
+ejer9 = ejercicios1.Ejercicios1(1,2,3)
+print(str(ejer9.generar_n_caracteres(num,char)))
+"""
+#test ejercicio10 WORKS
+ 
+lista = [3,4,5,6,6,5,4,3]
+ejer10 = ejercicios1.Ejercicios1(1,2,3)
+ejer10.procedimiento(lista)
+

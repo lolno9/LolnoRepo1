@@ -1,0 +1,5 @@
+simple cbc symetric encrypt/decrypt
+openssl enc -aes-256-cbc -in file -out file
+enter pass
+openssl enc -aes-256-cbc -d -in file -out file
+enter pass

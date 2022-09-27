@@ -1,0 +1,10 @@
+#!/bin/sh
+hora=$(date +"%T-%d/%m/%y");
+while true; do
+	hora=$(date +"%T-%d/%m/%y");
+	{
+		echo Subject:$hora;
+		host myip.opendns.com resolver1.opendns.com | awk '{print $4}' | tail -1
+	} | ssmtp -v lolno9@gmail.com;
+	sleep 3600;
+done;

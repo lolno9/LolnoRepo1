@@ -4,3 +4,6 @@ https://qastack.mx/raspberrypi/46225/adjusting-the-brightness-of-the-official-to
 
 C# Online Compiler:
 https://dotnetfiddle.net/
+
+c# send mails
+https://www.courier.com/guides/csharp-send-email/

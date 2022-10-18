@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/1777184/simulating-a-keypress-and-keyrelease-in-another-application
+https://stackoverflow.com/questions/30147136/c-sharp-simulate-keypress-or-keys-to-another-application
+???
+https://stackoverflow.com/questions/172353/how-to-push-a-key-and-release-it-using-c/9509588

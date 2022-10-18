@@ -1,0 +1,15 @@
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\bin\Debug\net6.0\Cryptografia.exe
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\bin\Debug\net6.0\Cryptografia.deps.json
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\bin\Debug\net6.0\Cryptografia.runtimeconfig.json
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\bin\Debug\net6.0\Cryptografia.dll
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\bin\Debug\net6.0\Cryptografia.pdb
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.csproj.AssemblyReference.cache
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.AssemblyInfoInputs.cache
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.AssemblyInfo.cs
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.csproj.CoreCompileInputs.cache
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.dll
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\refint\Cryptografia.dll
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.pdb
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\Cryptografia.genruntimeconfig.cache
+C:\Users\amarin\source\repos\Cryptografia\Cryptografia\obj\Debug\net6.0\ref\Cryptografia.dll

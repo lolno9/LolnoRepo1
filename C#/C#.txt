@@ -1,0 +1,12 @@
+do
+{
+
+/*  while (!Console.KeyAvailable) //Continue if pressing a Key press is not available in the input stream
+    {
+        //Do Something While Paused
+    } 
+*/
+
+} while (Console.ReadKey(true).Key != ConsoleKey.Escape); //Resume if Escape was pressed
+
+ use do and while to pause the console. if necessary, the console should resume if you press a specific key.

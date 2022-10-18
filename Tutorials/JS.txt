@@ -1,0 +1,47 @@
+Get data from lookup fields and fill them with data
+
+Xrm.Page.getAttribute()-------Xrm.Page.getControl()
+lpenti  lpclienp lpcont lpcuen 
+Xrm.Page.getAttribute()[16].getValue() == Xrm.Page.getAttribute("ifr_textorand").getValue()
+Xrm.Page.getControl()[16].setVisible(false) == Xrm.Page.getControl("ifr_textorand").setVisible(false)
+
+//check if lookup is empty
+if(Xrm.Page.getAttribute("ifr_lookuprelaciones").getValue()!==null)
+
+//get all data from lookup field as a string
+finalstr = lpenti.getValue()[0].entityType+"\t\t"+lpenti.getValue()[0].id.slice(1,-1)+"\t\t"+lpenti.getValue()[0].name+"\t\t"+lpenti._attributeName+"\n"
+finalstr = lpclienp.getValue()[0].entityType+"\t\t"+lpclienp.getValue()[0].id.slice(1,-1)+"\t\t"+lpclienp.getValue()[0].name+"\t\t"+lpclienp._attributeName+"\n"
+finalstr = lpcont.getValue()[0].entityType+"\t\t"+lpcont.getValue()[0].id.slice(1,-1)+"\t\t"+lpcont.getValue()[0].name+"\t\t"+lpcont._attributeName+"\n"
+finalstr = lpcuen.getValue()[0].entityType+"\t\t"+lpcuen.getValue()[0].id.slice(1,-1)+"\t\t"+lpcuen.getValue()[0].name+"\t\t"+lpcuen._attributeName+"\n"
+
+
+//get lookup data JS
+formContext.getAttribute("campolookup").getValue()[0].entityType//id//name
+
+//fill lookup with JS
+var lookupValue = new Array();
+lookupValue[0] = new Object();
+lookupValue[0].id = "{"+formContext._entityReference.id.guid+"}";//"{727504ed-64c5-4bc8-ac22-0a3071c427e3}"; // GUID of the lookup id
+lookupValue[0].name = formContext.getAttribute()[0].getValue();//"Goutam Das"; // Name of the lookup
+lookupValue[0].entityType = formContext._entityReference.etn;//"contact"; //Entity Type of the lookup entity
+formContext.getAttribute("ifr_lookuprelaciones").setValue(lookupValue) //Xrm.Page.getAttribute("FieldName").setValue(lookupValue); // Xrm.Page.getAttribute()[1].setValue(lookupValue); // You need to replace the lookup field Name..
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+obtener datos para los contactos, clientes potenciales y cuentas mediante los LP de ifr_relaciones ( sacar los datos del contacto para la cuenta y viceversa, etc)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JS - Obtener EntityReference de campos en subgrid
+formContext = Xrm.Page
+sgcontact = formContext.getControl("Subgrid1_contactos")
+sgrows = sgcontact.getGrid().getRows()
+eref = sgrows.get()[0].getData().getEntity().getEntityReference()
+
+//fill lookup field with the data
+var lookupValue = new Array();
+lookupValue[0] = new Object();
+{
+	sgcontactrows = formContext.getControl("Subgrid1_contactos")getGrid().getRows();
+	sgdata = sgcontactrows.get()[0].getData().getEntity().getEntityReference();
+}
+lookupValue[0] = {sgdata == eref};
+formContext.getAttribute(campolookup).setValue(lookupValue);

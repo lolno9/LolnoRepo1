@@ -14,9 +14,89 @@ namespace AMAppTest // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
+            string[] DefaultFile = { "test.jpg", @"C:\Users\amarin\Desktop\" };
+            Console.WriteLine("Introducir nombre de archivo");
+            /*do
+            {
+                file = Console.ReadLine();
+            } while (String.IsNullOrWhiteSpace(file));*/
+            string file = Console.ReadLine();
+            Console.WriteLine("\nIntroducir ruta de archivo (en blanco default)");
+            string path = Console.ReadLine();
+            BitConversor bc;
+            if (file == string.Empty)
+                file = DefaultFile[0];
+            if (path == string.Empty)
+                path = DefaultFile[1];
+            bc = new BitConversor(file, path);
+            bc.Process();
+            /*string PATH = @"C:\Users\amarin\Desktop\";
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Console.WriteLine(PATH);
+            Console.Write("Insert File Name: ");
+            PATH += Console.ReadLine();
+            Console.WriteLine(PATH);
+            if (File.Exists(PATH))
+            {
+                Console.WriteLine("File: " + PATH + "\t Exists");
+                var file = File.ReadAllBytes(PATH);
+                byte btindx = 0;
+                List<string> listBin = new List<string>();
+                List<string> listLogs = new List<string>();
+                string strBin = string.Empty, strAllBin = string.Empty, ereaser = string.Empty;
+                int contador = 0;
+                do
+                {
+                    btindx = file[contador];
+                    string log2 = (contador + 1) + ";" + btindx + ";" + Convert.ToString(btindx, 2) + ";" + strBin.PadLeft(8, '0') + ";" + Convert.ToInt32(btindx) + ";" + Convert.ToChar(btindx) + ";";
+                    string log = (contador + 1) + ":\t| Byte: " + btindx + "\t| Bin: " + Convert.ToString(btindx, 2) + "\t| 8-Padded Bin: " + strBin.PadLeft(8, '0') + "\tint: " + Convert.ToInt32(btindx) + "    \tASCII: " + Convert.ToChar(btindx);
+                    strBin = Convert.ToString(btindx, 2);//Bin
+                    strBin = strBin.PadLeft(8, '0');// 8-Padded Bin
+                    strAllBin += strBin; //Concatenate 8-Padded Bin bytes
+                    listBin.Add(strBin);
+                    //Thread.Sleep(50);
+                    Console.Write(log2);//Thread.Sleep(1000);
+                    foreach (char c in log2)
+                    {
+                        ereaser += "\b";
+                        //Console.Write("\b");
+                    }
+                    //Console.Write(ereaser);
+                    listLogs.Add(log2);
+                    Console.Write(ereaser);
+                    contador++;
+                } while (contador < file.Length);
+                FileManage fm = new FileManage("LogByteToBin.log", @"C:\Users\amarin\Desktop\");
+                listLogs.Add(fm.endLines());
+                string b64file = Convert.ToBase64String(file);
+                string test = Library1.UTF8ByteToString(file);
+                Console.WriteLine("string data:\n" + test + "\nbytes count: " + file.Count() + " chars: " + test.Count());
+                listLogs.Add("string data:\n" + test + "\nbytes count: " + file.Count() + " chars: " + test.Count());
+                Console.WriteLine("B64 data:\n" + b64file + "\nbytes count: " + file.Count() + " b64 chars: " + b64file.Count());
+                listLogs.Add("B64 data:\n" + b64file + "\nbytes count: " + file.Count() + " b64 chars: " + b64file.Count());
+                Console.WriteLine("bit data:\n" + strAllBin + "\ncount: " + file.Count() + " bits: " + file.Count() * 8);
+                listLogs.Add("bit data:\n" + strAllBin + "\ncount: " + file.Count() + " bits: " + file.Count() * 8);
+                listLogs.Add(fm.endLines());
+                Library1.Pause();
+                string chk = string.Empty;
+                foreach(string str in listBin)
+                {
+                    Console.Write(str + "   ");
+                    chk += str + "   ";
+                    
+                }
+                Console.Write("\nTotal of " + listBin.Count() * 8 + " bits");
+                listLogs.Add(chk);
+                listLogs.Add("Total of " + listBin.Count() * 8 + " bits");
+                if (fm.tryCreateNewFile())
+                    Console.WriteLine(fm.appendTextToFile(listLogs) ? "\nSuccess" : "\nError");
+                else
+                    Console.WriteLine("Can't create file");
+                //fm.appendTextToFile(fm);
+            }*/
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             /*string str = "main";
             Program p = new Program();

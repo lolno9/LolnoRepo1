@@ -57,10 +57,12 @@ namespace TestLibrary1
         // Empty constructor (new or existing files)
         public FileManage() { }
         // Constructor with only file name (new or existing files)
-        public FileManage(string file) { fileName = file; }
+        public FileManage(string file) { FileName = file; }
         //Constructor with file name and creation date (Use only for new files)
-        public FileManage(string file, DateTime cDate) { fileName = file; creationDate = getFormatedTimeString(cDate); }
-        
+        public FileManage(string file, DateTime cDate) { FileName = file; CreationDate = getFormatedTimeString(cDate); }
+        //Constructor with file name and path
+        public FileManage(string file, string path) { fileName = file; Path = path; }
+
         // Check if file exist, if not, creates one
         public bool tryCreateNewFile()
         {
@@ -137,7 +139,7 @@ namespace TestLibrary1
             }
         }
         // String Used to start and end the writed data
-        private string endLines()
+        public string endLines()
         {
             return "----------------------------------------------------------------------------------------------------------------------------------";
         }

@@ -42,7 +42,7 @@ namespace TestLibrary1
             {
                 usage = (txt.GetType().ToString().Contains("String")) ? txt.ToString() + cont : "Parametro sin valor - Main Thread: " + cont;
                 Console.Write(usage);
-                Thread.Sleep(500);
+                Thread.Sleep(800);
                 cont++;
                 foreach (char c in usage)
                 {

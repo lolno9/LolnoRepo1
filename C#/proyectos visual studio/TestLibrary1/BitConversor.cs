@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,15 +12,26 @@ namespace TestLibrary1
 {
     public class BitConversor
     {
+        //Attributes
         private string Path { get; set; }
         public string PATHGS { get {return Path; } set { Path = value;} }
         private string Name { get; set; }
         public string NAME { get {return Name;} set { Name = value;} }
+        private string AllBinarys { get; set; }
+        public string ALLBINARYS { get {return AllBinarys;} set { AllBinarys = value;} }
+        private string B64Data { get; set; }
+        public string B64DATA { get {return B64Data;} set { B64Data = value;} }
+        private string Utf8Data { get; set; }
+        public string UTF8DATA { get {return Utf8Data;} set { Utf8Data = value;} }
+
+        //Constructors
         public BitConversor() { }
         public BitConversor(string name) { Name = name; }
         public BitConversor(string name, string pATHGS) { Name = name; Path = pATHGS; }
         private string[] DefaultFile = { "Log-ByteToBin.log", @"C:\Users\amarin\Desktop\" }; //OUTPUT
         public string[] DEFAULTFILE { get { return DefaultFile; } }
+
+        //Methods
         public void SetFullPATH()//Concatenate path and name in the same string
         {//TODO valorate if is necessary put the console.read here or just set the full path
             Console.WriteLine("1 - "+PATHGS);
@@ -69,77 +81,65 @@ namespace TestLibrary1
                 Path = @"C:\Users\amarin\Desktop\" + Name;
             SetFullPATH();
         }
-        public void ReadFile(byte[] file, List<string> listBin, List<string> listLogs, string strBin, string strAllBin, FileManage fm)
-        {//TODO Read file outside class, input result and do logic here
-            int contador = 0;
-            byte btindx = 0;
-            do
+        public List<string> ConvertData(byte[] file)//Return a list with the data ready to put in a file Input: byte[] with file data
+        {
+            List<string> data = new List<string>();
+            string processedData = string.Empty, toPrint = string.Empty, binaryString = string.Empty, binary8PString = string.Empty, allBinarys = string.Empty;
+            for (int i=0; i<file.Length; i++)
             {
-                btindx = file[contador];
-                string log2 = (contador + 1) + ";" + btindx + ";" + Convert.ToString(btindx, 2) + ";" + strBin.PadLeft(8, '0') + ";" + Convert.ToInt32(btindx) + ";" + Convert.ToChar(btindx) + ";";
-                string log = (contador + 1) + ":\t| Byte: " + btindx + "\t| Bin: " + Convert.ToString(btindx, 2) + "\t| 8-Padded Bin: " + strBin.PadLeft(8, '0') + "\tint: " + Convert.ToInt32(btindx) + "    \tASCII: " + Convert.ToChar(btindx);
-                strBin = Convert.ToString(btindx, 2);//Bin
-                strBin = strBin.PadLeft(8, '0');// 8-Padded Bin
-                strAllBin += strBin + ";"; //Concatenate 8-Padded Bin bytes
-                listBin.Add(strBin);
-                Console.Write(log2);
-                foreach (char c in log2)
-                {
-                    Console.Write("\b");
-                }
-                listLogs.Add(log2);
-                contador++;
-            } while (contador < file.Length);
-
-            listLogs.Add(fm.endLines());
-            string b64file = Convert.ToBase64String(file);
-            string test = Library1.UTF8ByteToString(file);
-            Console.WriteLine("string data:\n" + test + "\nbytes count: " + file.Count() + " chars: " + test.Count());
-            listLogs.Add("string data:\n" + test + "\nbytes count: " + file.Count() + " chars: " + test.Count());
-            listLogs.Add(fm.endLines());
-            Console.WriteLine("B64 data:\n" + b64file + "\nbytes count: " + file.Count() + " b64 chars: " + b64file.Count());
-            listLogs.Add("B64 data:\n" + b64file + "\nbytes count: " + file.Count() + " b64 chars: " + b64file.Count());
-            listLogs.Add(fm.endLines());
-            Console.WriteLine("bit data:\n" + strAllBin + "\ncount: " + file.Count() + " bits: " + file.Count() * 8);
-            listLogs.Add("bit data:\n" + strAllBin + "\ncount: " + file.Count() + " bits: " + file.Count() * 8);
-            listLogs.Add(fm.endLines());
+                binaryString = GetBinFromByte(file[i]);
+                binary8PString = Get8PBinFromByte(file[i]);
+                allBinarys += binary8PString; //AllBinarys
+                toPrint = (i + 1) + ":\t| Byte: " + file[i] + "\t| Bin: " + binaryString + "\t| 8-Padded Bin: " + binary8PString + "\tInt: " + Convert.ToInt32(file[i]) + "\t| ASCII: " + Convert.ToChar(file[i]);
+                processedData = (i + 1) + ";" + file[i] + ";" + binaryString + ";" + binary8PString + ";" + Convert.ToInt32(file[i]) + ";" + Convert.ToChar(file[i]) + ";";
+                data.Add(processedData);
+                Console.WriteLine(toPrint);
+            }
+            AllBinarys = "BIT Data:\n" + allBinarys + "\nBytes count: " + file.Count() + " bits: " + file.Count() * 8;
+            B64Data = Convert.ToBase64String(file);
+            B64Data = "Base64 Data:\n" + B64Data + "\nBytes count: " + file.Count() + " B64 chars: " + B64Data.Count();
+            Utf8Data = Encoding.UTF8.GetString(file);
+            Utf8Data = "UTF8 Data:\n" + Utf8Data + "\nBytes count: " + file.Count() + " chars: " + Utf8Data.Count();
+            return data;
         }
-        public void GetAllBins(List<string> listBin, List<string> listLogs,FileManage fm)//Print all binarys for a input list of bytes
-        {//TODO convert to a List<string> or string[] return method (do file write somewhere else), also just input a list/array of bins and create the other inside
-            string chk = string.Empty;
-            int cont = 0;
-            foreach (string str in listBin)
+        public string GetAllBins(List<string> listBin)//Print all binarys for a input list of bytes and returns a string with all binarys concatenated with 3 whitespaces
+        {//TODO? change the separation of "   " to ';' ??
+            string concatenateBins = string.Empty;
+            string lastLine = "Total of " + listBin.Count() + " Bytes & " + listBin.Count() * 8 + " bits";
+            for (int i=0, cont=0;i>listBin.Count();i++, cont++)
             {
-                if(cont == 8) 
-                { 
+                if(cont == 8)
+                {
                     cont = 0;
-                    Console.Write(str + "\n");
-                    chk += str + "\n";
+                    Console.Write(listBin[i] + "\n");
+                    concatenateBins += listBin[i] + "\n";
                 } else
                 {
-                    Console.Write(str + "   ");
-                    chk += str + "   ";
+                    Console.Write(listBin[i] + "   ");
+                    concatenateBins += listBin[i] + "   ";
                 }
-                cont++;
+                if(i == (listBin.Count()-1) && cont != 8)
+                {
+                    concatenateBins += "\n";
+                }
             }
-            Console.Write("\nTotal of " + listBin.Count() * 8 + " bits");
-            listLogs.Add(chk);
-            listLogs.Add("Total of " + listBin.Count() * 8 + " bits");
-            if (fm.tryCreateNewFile())
-                Console.WriteLine(fm.appendTextToFile(listLogs) ? "\nSuccess" : "\nError");
-            else
-                Console.WriteLine("Can't create file");
+            concatenateBins += lastLine;
+            return concatenateBins; //Use this return to write in a file instead of writing inside the method
         }
-        public void ShowAllBytes(string allBins)//Prints All bytes for input Binarys Input: Binaris concatenated in string format with ';' separation on right side
+        public List<byte> GetAllBytes(string allBins)//Return a List<byte> of all bytes and Prints All bytes for input Binarys Input: Binaris concatenated in string format with ';' separation on right side
         {
             //string tst = "11111111;11011000;11111111;11100000;00000000;00010000;01001010;01000110;01001001;01000110;00000000;00000001;00000001;00000001;00000000;01100000;00000000;01100000;00000000;00000000;11111111;11011011;00000000;01000011;00000000;00001010;";
-            string[] test = allBins.Split(';');
-            Console.WriteLine("Total bits: " + test.Length + "\n");
-            for (int i = 0, cont = 0; i < test.Length; i++, cont++)
+            string[] binaryArray = allBins.Split(';');
+            List<byte> allBytes = new List<byte>();
+            byte bt = 0;
+            Console.WriteLine("Total bits: " + binaryArray.Length + "\n");
+            for (int i = 0, cont = 0; i < binaryArray.Length; i++, cont++)
             {
-                if (!string.IsNullOrWhiteSpace(test[i]))
+                if (!string.IsNullOrWhiteSpace(binaryArray[i]))
                 {
-                    Console.Write((i + 1) + ": " + test[i] + " = " + Convert.ToByte(test[i], 2));
+                    bt = Convert.ToByte(binaryArray[i], 2);
+                    allBytes.Add(bt);
+                    Console.Write((i + 1) + ": " + binaryArray[i] + " = " + bt);
                     if (cont == 8)
                     {
                         Console.Write("\n");
@@ -151,8 +151,9 @@ namespace TestLibrary1
                     }
                 }
             }
+            return allBytes;
         }
-        public void Process()//If no values entered takes defalt values, read file and get all bytes as binarys, then creates a file with data
+        /*public void Process()//If no values entered takes defalt values, read file and get all bytes as binarys, then creates a file with data
         {//TODO take out file manage from this class, input the data from file and concatenate methods here (automated bit conversor call)
             if (Name == string.Empty || Path == string.Empty) // Default values if nothing entered
                 SetDefaultValues(); 
@@ -166,6 +167,6 @@ namespace TestLibrary1
             FileManage fm = new FileManage(DefaultFile[0], DefaultFile[1]);//"Log-ByteToBin.log", @"C:\Users\amarin\Desktop\"
             ReadFile(file, listBin, listLogs, strBin, strAllBin, fm);
             GetAllBins(listBin, listLogs, fm);
-        }
+        }*/
     }
 }

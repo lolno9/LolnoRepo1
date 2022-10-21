@@ -16,12 +16,9 @@ namespace AMAppTest // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            string[] DefaultFile = { "test.jpg", @"C:\Users\amarin\Desktop\" };
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*string[] DefaultFile = { "test.jpg", @"C:\Users\amarin\Desktop\" };
             Console.WriteLine("Introducir nombre de archivo");
-            /*do
-            {
-                file = Console.ReadLine();
-            } while (String.IsNullOrWhiteSpace(file));*/
             string file = Console.ReadLine();
             Console.WriteLine("\nIntroducir ruta de archivo (en blanco default)");
             string path = Console.ReadLine();
@@ -31,7 +28,7 @@ namespace AMAppTest // Note: actual namespace depends on the project name.
             if (path == string.Empty)
                 path = DefaultFile[1];
             bc = new BitConversor(file, path);
-            bc.Process();
+            bc.Process();*/
             /*string PATH = @"C:\Users\amarin\Desktop\";
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Console.WriteLine(PATH);

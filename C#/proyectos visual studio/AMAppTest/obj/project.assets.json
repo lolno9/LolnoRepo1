@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amarin\\source\\repos\\AMAppTest\\AMAppTest.csproj",
+      "projectUniqueName": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AMAppTest\\AMAppTest.csproj",
       "projectName": "AMAppTest",
-      "projectPath": "C:\\Users\\amarin\\source\\repos\\AMAppTest\\AMAppTest.csproj",
+      "projectPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AMAppTest\\AMAppTest.csproj",
       "packagesPath": "C:\\Users\\amarin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amarin\\source\\repos\\AMAppTest\\obj\\",
+      "outputPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AMAppTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amarin\\AppData\\Roaming\\NuGet\\NuGet.Config",

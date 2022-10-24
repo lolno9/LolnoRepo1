@@ -17,14 +17,6 @@ namespace AMAppTest // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            File.Create("testeo3.db3");
-            DBConnector dbc = new DBConnector("testeo3.db3");
-            dbc.CreateConnection();
-            Console.WriteLine(dbc.CheckConnection() ? "Connection OK" : "Bad Connection");
-            //dbc.CreateTable();
-            //dbc.InsertData();
-            Console.WriteLine(dbc.ReadData());
-            dbc.SQLiteCloseConnection();
             /*Process p = new Process();
             p.StartInfo = new ProcessStartInfo(@"C:\Users\amarin\js\Py\dist\test\test.exe")
             {

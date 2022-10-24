@@ -9,6 +9,7 @@ using TestLibrary1;
 using System.Threading;
 using System.Runtime.CompilerServices;
 using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
 
 namespace AMAppTest // Note: actual namespace depends on the project name.
 {
@@ -16,6 +17,25 @@ namespace AMAppTest // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
+            File.Create("testeo3.db3");
+            DBConnector dbc = new DBConnector("testeo3.db3");
+            dbc.CreateConnection();
+            Console.WriteLine(dbc.CheckConnection() ? "Connection OK" : "Bad Connection");
+            //dbc.CreateTable();
+            //dbc.InsertData();
+            Console.WriteLine(dbc.ReadData());
+            dbc.SQLiteCloseConnection();
+            /*Process p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"C:\Users\amarin\js\Py\dist\test\test.exe")
+            {
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = false,
+            };
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            Console.WriteLine(output);*/
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             /*string[] DefaultFile = { "test.jpg", @"C:\Users\amarin\Desktop\" };
             Console.WriteLine("Introducir nombre de archivo");

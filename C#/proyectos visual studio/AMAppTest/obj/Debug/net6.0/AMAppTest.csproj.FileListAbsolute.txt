@@ -1,26 +1,13 @@
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\AMAppTest.exe
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\AMAppTest.deps.json
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\AMAppTest.runtimeconfig.json
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\AMAppTest.dll
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\AMAppTest.pdb
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.csproj.AssemblyReference.cache
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.AssemblyInfoInputs.cache
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.AssemblyInfo.cs
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.csproj.CoreCompileInputs.cache
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.dll
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\refint\AMAppTest.dll
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.pdb
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.genruntimeconfig.cache
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\ref\AMAppTest.dll
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\TestLibrary1.dll
-C:\Users\amarin\source\repos\AMAppTest\bin\Debug\net6.0\TestLibrary1.pdb
-C:\Users\amarin\source\repos\AMAppTest\obj\Debug\net6.0\AMAppTest.csproj.CopyComplete
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\AMAppTest.exe
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\AMAppTest.deps.json
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\AMAppTest.runtimeconfig.json
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\AMAppTest.dll
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\AMAppTest.pdb
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\System.Data.SQLite.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\TestLibrary1.dll
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\bin\Debug\net6.0\TestLibrary1.pdb
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AMAppTest\obj\Debug\net6.0\AMAppTest.csproj.AssemblyReference.cache

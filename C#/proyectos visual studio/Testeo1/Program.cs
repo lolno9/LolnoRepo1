@@ -8,39 +8,24 @@ namespace Testeo1
     {
         static void Main(string[] args)
         {
+            bool isDebug = false;
             ///////////////////////////////////////////////////
             //AutoMouse autoMouse = new AutoMouse(50, 60);
             //AutoMouse.Execute();
             //Pause();
             ///////////////////////////////////////////////////
-            [DllImport("User32.dll")]
-            static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-            [DllImport("User32.dll")]
-            static extern int SetForegroundWindow(IntPtr hWnd);
-            Process[] p = Process.GetProcesses();
-            int cont = 0;
-            Process toWork;
-            foreach (Process proc in p)
+
+            ///////////////////////////////////////////////////
+            AutoKeys ak = new AutoKeys();
+            Process[] processes = ak.GetRunningProcesses();
+            Process teams = ak.IterateProcesses(processes, "Xavier");
+            string message = "" + ConsoleKey.D + ":" + ((byte)ConsoleKey.D) + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + "From Console";//string.Empty;
+            if (teams != null)
             {
-                if (proc.ProcessName.Contains("eams"))
-                {
-                    Console.WriteLine("Process found: " + proc.ProcessName);
-                    Console.WriteLine("Machine Name: " + proc.MachineName);
-                    Console.WriteLine("Main Window Title: " + proc.MainWindowTitle);
-                    Console.WriteLine("Process Id " + proc.Id);
-                    if (proc.MainWindowTitle.Contains("Consultores"))
-                    {
-                        cont = proc.Id;
-                        Console.WriteLine("ID get");
-                        break;
-                    }
-                }
+                //if isDebug then send string.Empty, if isDebug is false send custom message
+                ak.Execute(teams, isDebug ? string.Empty : message);
             }
-            Pause();
-            toWork = Process.GetProcessById(cont);
-            IntPtr ptrFF = toWork.MainWindowHandle;
-            SetForegroundWindow(ptrFF);
-            SendKeys.SendWait("" + ConsoleKey.D+":"+((byte)ConsoleKey.D) + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + "From Console"+"\n");
+            ///////////////////////////////////////////////////
             Pause();
         }
         public static void Pause()

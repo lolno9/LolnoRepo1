@@ -8,33 +8,36 @@ namespace AutoFarmer
     {
         static void Main(string[] args)
         {
-            bool isTest = true;
-            bool isDebug = true;
-            ///////////////////////////////////////////////////
-            //AutoMouse autoMouse = new AutoMouse(50, 60);
-            //AutoMouse.Execute();
-            //Pause();
-            ///////////////////////////////////////////////////
+            bool isTest = true; //True blocks message send, False lets message be sended
+            bool isDebug = true; //True uses default message, False uses custom message
+            bool TMouseFKeys = false; //True execute AutoMouse, False execute AutoKeys
 
-            /**/
-            ///////////////////////////////////////////////////
-            AutoKeys ak = new AutoKeys();
-            Process[] processes = ak.GetRunningProcesses();
-            Process teams = ak.IterateProcesses(processes, "Xavier");
-
-            string message = "" + ConsoleKey.D + ":" + ((byte)ConsoleKey.D) + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + "From Console";//string.Empty;
-            if (teams != null)
+            if(TMouseFKeys)
             {
-                Console.WriteLine("\n");
-                if (!isTest)
-                    ak.Execute(teams, isDebug ? string.Empty : message);
-                else
-                    Console.WriteLine(message, isDebug ? string.Empty : message);
+                AutoMouse autoMouse = new AutoMouse(50, 60);
+                AutoMouse.Execute();
+                Pause();               
             }
-            Console.WriteLine(ak.GetProcessInfo(teams));
-            ///////////////////////////////////////////////////
-            Pause();
 
+            if (!TMouseFKeys)
+            {
+                string name = "Xavier"; //Name of the windows (part of the name at least) to search throught processes
+                AutoKeys ak = new AutoKeys();
+                Process[] processes = ak.GetRunningProcesses();
+                Process teams = ak.IterateProcesses(processes, name);
+                //Custom message
+                string message = "" + ConsoleKey.D + ":" + ((byte)ConsoleKey.D) + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + "From Console";
+                if (teams != null)
+                {
+                    Console.WriteLine("\n");
+                    if (!isTest)
+                        ak.Execute(teams, isDebug ? string.Empty : message);
+                    else
+                        Console.WriteLine(message, isDebug ? string.Empty : message);
+                }
+                Console.WriteLine(ak.GetProcessInfo(teams));
+                Pause();
+            }
         }
         public static void Pause()
         {

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\AutoFarmer.csproj",
+      "projectUniqueName": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AutoFarmer\\AutoFarmer.csproj",
       "projectName": "AutoFarmer",
-      "projectPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\AutoFarmer.csproj",
+      "projectPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AutoFarmer\\AutoFarmer.csproj",
       "packagesPath": "C:\\Users\\amarin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\obj\\",
+      "outputPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\AutoFarmer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amarin\\AppData\\Roaming\\NuGet\\NuGet.Config",

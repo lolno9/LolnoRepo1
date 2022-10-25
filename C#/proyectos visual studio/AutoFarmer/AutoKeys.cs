@@ -28,12 +28,12 @@ namespace AutoFarmer
         {
             foreach(Process process in processes)
             {
-                Console.WriteLine("Process found: " + process.ProcessName);
-                Console.WriteLine("Machine Name: " + process.MachineName);
-                Console.WriteLine("Main Window Title: " + process.MainWindowTitle);
-                Console.WriteLine("Process Id " + process.Id);
                 if (process.MainWindowTitle.Contains(toCheck))
                 {
+                    Console.WriteLine("Process: " + process.ProcessName);
+                    Console.WriteLine("Machine Name: " + process.MachineName);
+                    Console.WriteLine("Main Window Title: " + process.MainWindowTitle);
+                    Console.WriteLine("Process Id " + process.Id);
                     Console.WriteLine("Process Found");
                     return process;
                 }
@@ -53,6 +53,10 @@ namespace AutoFarmer
             {
                 SendKeys.SendWait("Testeo con AutoKeys como clase con metodos\n");
             }
+        }
+        public string GetProcessInfo(Process process)
+        {
+            return process.MainModule.FileVersionInfo.ToString();
         }
     }
 }

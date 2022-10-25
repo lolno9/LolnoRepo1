@@ -34,7 +34,7 @@ namespace AutoFarmer
                     if (!isTest)
                         ak.Execute(teams, isDebug ? string.Empty : message);
                     else
-                        Console.WriteLine("\n\tTesting, message= " + message, isDebug ? string.Empty : message);
+                        Console.WriteLine("\n\tTesting, message= " +  (isDebug ? "Default message" : message));
                 }
                 //Console.WriteLine(ak.GetProcessInfo(teams));
                 Pause();

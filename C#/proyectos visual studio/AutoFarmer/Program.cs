@@ -11,7 +11,7 @@ namespace AutoFarmer
             bool isTest = true; //True blocks message send, False lets message be sended
             bool isDebug = true; //True uses default message, False uses custom message
             bool TMouseFKeys = false; //True execute AutoMouse, False execute AutoKeys
-            bool withName = false; //True se name to ckeck trought processes, False use a default value
+            bool withName = false; //True use name to ckeck trought processes, False use a default value
 
             if(TMouseFKeys)
             {

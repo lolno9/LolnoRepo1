@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amarin\\source\\repos\\Testeo1\\Testeo1.csproj": {}
+    "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\Testeo1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amarin\\source\\repos\\Testeo1\\Testeo1.csproj": {
+    "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\Testeo1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amarin\\source\\repos\\Testeo1\\Testeo1.csproj",
+        "projectUniqueName": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\Testeo1.csproj",
         "projectName": "Testeo1",
-        "projectPath": "C:\\Users\\amarin\\source\\repos\\Testeo1\\Testeo1.csproj",
+        "projectPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\Testeo1.csproj",
         "packagesPath": "C:\\Users\\amarin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amarin\\source\\repos\\Testeo1\\obj\\",
+        "outputPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\Testeo1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amarin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -53,6 +53,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"

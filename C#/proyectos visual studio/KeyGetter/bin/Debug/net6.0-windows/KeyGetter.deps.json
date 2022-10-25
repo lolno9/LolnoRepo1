@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "KeyGetter/1.0.0": {
+        "runtime": {
+          "KeyGetter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KeyGetter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

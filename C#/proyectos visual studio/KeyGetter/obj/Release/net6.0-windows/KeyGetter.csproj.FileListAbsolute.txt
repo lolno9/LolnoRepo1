@@ -1,0 +1,17 @@
+C:\Users\amarin\source\repos\KeyGetter\bin\Release\net6.0-windows\KeyGetter.exe
+C:\Users\amarin\source\repos\KeyGetter\bin\Release\net6.0-windows\KeyGetter.deps.json
+C:\Users\amarin\source\repos\KeyGetter\bin\Release\net6.0-windows\KeyGetter.runtimeconfig.json
+C:\Users\amarin\source\repos\KeyGetter\bin\Release\net6.0-windows\KeyGetter.dll
+C:\Users\amarin\source\repos\KeyGetter\bin\Release\net6.0-windows\KeyGetter.pdb
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.csproj.AssemblyReference.cache
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.KeyGetter.resources
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.csproj.GenerateResource.cache
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.AssemblyInfoInputs.cache
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.AssemblyInfo.cs
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.csproj.CoreCompileInputs.cache
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.dll
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\refint\KeyGetter.dll
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.pdb
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\KeyGetter.genruntimeconfig.cache
+C:\Users\amarin\source\repos\KeyGetter\obj\Release\net6.0-windows\ref\KeyGetter.dll

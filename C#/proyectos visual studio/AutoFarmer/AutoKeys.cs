@@ -26,6 +26,10 @@ namespace AutoFarmer
         //Iterate the processes array an look for a specific process
         public Process IterateProcesses(Process[] processes, string toCheck)
         {
+            if (string.IsNullOrWhiteSpace(toCheck))
+            {
+                toCheck = "Studio";//Default value if toCheck comes null
+            }
             foreach(Process process in processes)
             {
                 if (process.MainWindowTitle.Contains(toCheck))
@@ -35,6 +39,7 @@ namespace AutoFarmer
                     Console.WriteLine("Main Window Title: " + process.MainWindowTitle);
                     Console.WriteLine("Process Id " + process.Id);
                     Console.WriteLine("Process Found");
+                    Console.WriteLine("\n" + GetProcessInfo(process));
                     return process;
                 }
             }

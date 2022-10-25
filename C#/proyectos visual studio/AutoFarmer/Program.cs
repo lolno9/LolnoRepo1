@@ -11,10 +11,11 @@ namespace AutoFarmer
             bool isTest = true; //True blocks message send, False lets message be sended
             bool isDebug = true; //True uses default message, False uses custom message
             bool TMouseFKeys = false; //True execute AutoMouse, False execute AutoKeys
+            bool withName = false; //True se name to ckeck trought processes, False use a default value
 
             if(TMouseFKeys)
             {
-                AutoMouse autoMouse = new AutoMouse(50, 60);
+                AutoMouse autoMouse = new AutoMouse(10, 10);
                 AutoMouse.Execute();
                 Pause();               
             }
@@ -24,18 +25,18 @@ namespace AutoFarmer
                 string name = "Xavier"; //Name of the windows (part of the name at least) to search throught processes
                 AutoKeys ak = new AutoKeys();
                 Process[] processes = ak.GetRunningProcesses();
-                Process teams = ak.IterateProcesses(processes, name);
+                Process teams = ak.IterateProcesses(processes, withName ? name : string.Empty);
                 //Custom message
-                string message = "" + ConsoleKey.D + ":" + ((byte)ConsoleKey.D) + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + "From Console";
+                string message = "" + ConsoleKey.D + ":" + ((byte)ConsoleKey.D) + " " + ConsoleKey.S + ":" + ((byte)ConsoleKey.S) + " " + ConsoleKey.A + ":" + ((byte)ConsoleKey.A) + " " + ConsoleKey.W + ":" + ((byte)ConsoleKey.W) + " From Console";
                 if (teams != null)
                 {
                     Console.WriteLine("\n");
                     if (!isTest)
                         ak.Execute(teams, isDebug ? string.Empty : message);
                     else
-                        Console.WriteLine(message, isDebug ? string.Empty : message);
+                        Console.WriteLine("\n\tTesting, message= " + message, isDebug ? string.Empty : message);
                 }
-                Console.WriteLine(ak.GetProcessInfo(teams));
+                //Console.WriteLine(ak.GetProcessInfo(teams));
                 Pause();
             }
         }

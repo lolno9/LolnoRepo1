@@ -28,3 +28,14 @@ C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\obj\Debug\ne
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\obj\Debug\net6.0-windows\AutoFarmer.pdb
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\obj\Debug\net6.0-windows\AutoFarmer.genruntimeconfig.cache
 C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\obj\Debug\net6.0-windows\ref\AutoFarmer.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\AutoFarmer\obj\Debug\net6.0-windows\AutoFarmer.csproj.CopyComplete

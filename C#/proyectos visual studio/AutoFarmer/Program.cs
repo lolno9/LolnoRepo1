@@ -31,8 +31,8 @@ namespace AutoFarmer
                 else
                     Console.WriteLine(message, isDebug ? string.Empty : message);
             }
-            ///////////////////////////////////////////////////
             Console.WriteLine(ak.GetProcessInfo(teams));
+            ///////////////////////////////////////////////////
             Pause();
 
         }

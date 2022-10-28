@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amarin\\source\\repos\\ByteConversor\\ByteConversor.csproj": {}
+    "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\ByteConversor\\ByteConversor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amarin\\source\\repos\\ByteConversor\\ByteConversor.csproj": {
+    "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\ByteConversor\\ByteConversor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amarin\\source\\repos\\ByteConversor\\ByteConversor.csproj",
+        "projectUniqueName": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\ByteConversor\\ByteConversor.csproj",
         "projectName": "ByteConversor",
-        "projectPath": "C:\\Users\\amarin\\source\\repos\\ByteConversor\\ByteConversor.csproj",
+        "projectPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\ByteConversor\\ByteConversor.csproj",
         "packagesPath": "C:\\Users\\amarin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amarin\\source\\repos\\ByteConversor\\obj\\",
+        "outputPath": "C:\\Users\\amarin\\js\\LolnoRepo1\\C#\\proyectos visual studio\\ByteConversor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amarin\\AppData\\Roaming\\NuGet\\NuGet.Config",

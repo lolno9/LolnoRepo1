@@ -1,4 +1,9 @@
 ByteConversor
-Show progress as numbers (improve with progress bar?)
-Change last byte in storage to not have ';' to avoid empty string
-Set Default Read/Write Path to HOME or HOME/DOCUMENTS
+Show progress as numbers (improve with progress bar?)//DONE
+Change last byte in storage to not have ';' to avoid empty string//DONE
+Set Default Read/Write Path to HOME or HOME/DOCUMENTS //DONE
+
+BitConversor
+DONE
+Set Default Read/Write Path to HOME or HOME/DOCUMENTS //DONE
+Show progress as numbers (improve with progress bar?)//DONE

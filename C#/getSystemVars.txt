@@ -1,0 +1,29 @@
+public static string GetSystemVars(string toChek)
+        {   //Get all system variables
+            var tst = Environment.GetEnvironmentVariables();
+            List<string> list = new List<string>();
+            List<string> list2 = new List<string>();
+            string output = string.Empty;
+            foreach (var k in tst.Keys)//Get all keys
+            {
+                list.Add(k.ToString());
+            }
+            foreach (var v in tst.Values)//Get all values
+            {
+                list2.Add(v.ToString());
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(/*list[i]*/toChek)) 
+                { 
+                    if (list[i].Contains(toChek))//if toChek has value, get he coincidences
+                    {
+                        output += list[i] + " -> " + list2[i] + "\n";
+                    }
+                } else//if toChek is empty get all variables
+                {
+                    output += list[i] + " -> " + list2[i] + "\n";
+                }
+            }
+            return output; //return the results as string
+        }

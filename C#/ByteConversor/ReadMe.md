@@ -8,3 +8,7 @@ bytes concatenated with ';' Ex: 105;110;100;101;
 UPDATE
 Show line with progress
 Erased las ';' from bytes, now the line ends with "\n"
+
+#V0.0.3
+UPDATE
+Change default Path to HOME directory for read and write

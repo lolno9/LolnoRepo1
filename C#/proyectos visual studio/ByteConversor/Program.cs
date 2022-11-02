@@ -14,11 +14,12 @@ namespace ByteConversor
 {
     internal class Program
     {
+        static string home = Environment.GetEnvironmentVariable("HOMEDRIVE") + Environment.GetEnvironmentVariable("HOMEPATH") + @"\";
         static void Main(string[] args)
         {
             bool isDebug = false;
-            string[] testOut = { "ByteConv.byc", (isDebug) ? @"C:\Users\amarin\Desktop\" : @"C:\" };//Default output
-            string[] testIn = { "B64.csv", (isDebug) ? @"C:\Users\amarin\Desktop\" : @"C:\" };//Default input
+            string[] testOut = { "ByteConv.byc", (isDebug) ? @"C:\Users\amarin\Desktop\" : home/*@"C:\"*/ };//Default output
+            string[] testIn = { "B64.csv", (isDebug) ? @"C:\Users\amarin\Desktop\" : home/*@"C:\"*/ };//Default input
             List<string> testList = new List<string>();//Input (if no custom input select default one)
             Console.Write("File to open: ");
             testList.Add(Console.ReadLine());//Read input file name
@@ -26,7 +27,7 @@ namespace ByteConversor
             Console.Write("\nPath of the file: ");
             testList.Add(Console.ReadLine());//Read input file path
             Console.WriteLine(String.IsNullOrWhiteSpace(testList[1]) ? testIn[1] : testList[1]);//If custom input path empty, set to default
-            Console.WriteLine(testList[0]);
+            Console.WriteLine("\n"+home+testList[0]);
             Console.WriteLine("\n\n");
             //Check if values inside list are empty strings or not
             if(testList.Count == 2)
@@ -73,7 +74,7 @@ namespace ByteConversor
                      //Concatenate all bytes from rawData folowed by ';' in the output String
                     //////////////////////////////////////////////////////
                     ///This loop works for refreshing the progress line
-                    string consoleOut = contador + "/" + rawData.Count();
+                    string consoleOut = contador + "/" + rawData.Count() + " Bytes";
                     Console.Write(consoleOut);
                     foreach(char c in consoleOut)
                     {
@@ -93,7 +94,7 @@ namespace ByteConversor
                     output += s; //Concatenate all bits in byteData (As they are allways 8-padded, no need to put separator here)
                     //////////////////////////////////////////////////////
                     ///This loop works for refreshing the progress line
-                    string consoleOut = contador + "/" + byteData.Count();
+                    string consoleOut = contador + "/" + byteData.Count() + " Bytes";
                     Console.Write(consoleOut);
                     foreach (char c in consoleOut)
                     {

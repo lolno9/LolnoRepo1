@@ -77,8 +77,12 @@ namespace BitConversor
                 if(rawData[i].Contains(@"C:\"))
                 {
                     filesAviable.Add(i, rawData[i].Substring(3));//Add the path+filename in a different dictionary
+                    filesData.Add(i, rawData[i].Split('\\')[rawData[i].Split('\\').Length - 1]);
                 }
-                filesData.Add(i, rawData[i]);//Add all data to a diferend dictionary
+                else 
+                { 
+                    filesData.Add(i, rawData[i]);//Add all data to a diferend dictionary
+                }
             }
             if (filesAviable.Count > 0)
             {
@@ -160,15 +164,15 @@ namespace BitConversor
         {
             string name = fileInfo[0].Substring(3);
             DateTime today = DateTime.Now;
-            if (File.Exists(/*fileInfo[0]*/@"C:\" + name))
+            if (File.Exists(/*fileInfo[0]*//*@"C:\"*/home + name))
             {
                 bool check = true;
-                string fileName = @"C:\" + name + today.Day; ;
+                string fileName = /*@"C:\"*/home + name + today.Day; ;
                 while (check)
                 {
                     if (File.Exists(fileName))
                     {
-                        fileName = @"C:\" + name + today.AddDays(1).Day;
+                        fileName = /*@"C:\"*/home + name + today.AddDays(1).Day;
                     } else
                     {
                         check = false;
@@ -179,8 +183,8 @@ namespace BitConversor
                 WriteFile(fileInfo, fileName);
             } else
             {
-                Console.WriteLine("name: "+ @"C:\" + name);
-                WriteFile(fileInfo, @"C:\" + name/*fileInfo[0]*/);
+                Console.WriteLine("name: "+ /*@"C:\"*/home + name);
+                WriteFile(fileInfo, /*@"C:\"*/home + name/*fileInfo[0]*/);
             }
         }
         //Get the dictionary and fileName, add the bytes to a new list and use this list to create the copy of the file

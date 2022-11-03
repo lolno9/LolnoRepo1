@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 public class Program
 {//Define paths to the Byte and Bit apps, he name of the app and the version
     const string byteConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteWorker\ByteConversor\ByteConversorV0.0.3\ByteConversor.exe";
-    const string bitConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteWorker\BitConversor\BitConversorV0.0.3\BitConversor.exe";
+    const string bitConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteWorker\BitConversor\BitConversorV0.0.4\BitConversor.exe";
     const string name = "ByteWorker";
     const string version = "V.0.0.1";
     public static void Main(string[] args)

@@ -11,3 +11,6 @@ Change default path to HOME for read and write
 Corrected path bug
 Added check on existing files names
 Added Bytes to the end of progress check
+
+#V0.0.4
+Corrected error with paths in write

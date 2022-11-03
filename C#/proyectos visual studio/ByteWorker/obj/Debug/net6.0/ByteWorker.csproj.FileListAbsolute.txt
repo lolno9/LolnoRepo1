@@ -13,3 +13,18 @@ C:\Users\amarin\source\repos\ByteWorker\obj\Debug\net6.0\refint\ByteWorker.dll
 C:\Users\amarin\source\repos\ByteWorker\obj\Debug\net6.0\ByteWorker.pdb
 C:\Users\amarin\source\repos\ByteWorker\obj\Debug\net6.0\ByteWorker.genruntimeconfig.cache
 C:\Users\amarin\source\repos\ByteWorker\obj\Debug\net6.0\ref\ByteWorker.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\bin\Debug\net6.0\ByteWorker.exe
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\bin\Debug\net6.0\ByteWorker.deps.json
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\bin\Debug\net6.0\ByteWorker.runtimeconfig.json
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\bin\Debug\net6.0\ByteWorker.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\bin\Debug\net6.0\ByteWorker.pdb
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.csproj.AssemblyReference.cache
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.AssemblyInfoInputs.cache
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.AssemblyInfo.cs
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.csproj.CoreCompileInputs.cache
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\refint\ByteWorker.dll
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.pdb
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ByteWorker.genruntimeconfig.cache
+C:\Users\amarin\js\LolnoRepo1\C#\proyectos visual studio\ByteWorker\obj\Debug\net6.0\ref\ByteWorker.dll

@@ -5,29 +5,21 @@ using System.Text;//.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 
 public class Program
-{
-    const string byteConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteConversor\ByteConversorV0.0.3\ByteConversor.exe";
-    const string bitConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\BitConversor\BitConversorV0.0.3\BitConversor.exe";
+{//Define paths to the Byte and Bit apps, he name of the app and the version
+    const string byteConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteWorker\ByteConversor\ByteConversorV0.0.3\ByteConversor.exe";
+    const string bitConversorPath = @"C:\Users\amarin\js\LolnoRepo1\C#\ByteWorker\BitConversor\BitConversorV0.0.3\BitConversor.exe";
     const string name = "ByteWorker";
     const string version = "V.0.0.1";
     public static void Main(string[] args)
     {
-        int option = Menu();
-        if(option == 1)
-        {
-            Console.WriteLine("Open ByteConversorV0.0.3");
-        }
-        if(option == 2)
-        {
-            Console.WriteLine("Open BitConversorV0.0.3");
-        }
+        Menu();
         Pause();
     }
     private static void Pause()
     {
         do { Console.WriteLine("\n\n\n\n\n\n\t\t\t\t\tPress SpaceBar to Exit"); } while (Console.ReadKey(true).Key != ConsoleKey.Spacebar);
     }
-    private static int Menu()
+    private static void Menu()
     {
         int menuChoice = 0;
         bool inMenu = true;
@@ -68,7 +60,6 @@ public class Program
                 inMenu = false;
             }
         }
-        return menuChoice;
     }
     private static void CreateMenu()
     {

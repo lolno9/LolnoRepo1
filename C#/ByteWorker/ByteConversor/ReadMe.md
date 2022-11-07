@@ -12,3 +12,9 @@ Erased las ';' from bytes, now the line ends with "\n"
 #V0.0.3
 UPDATE
 Change default Path to HOME directory for read and write
+
+#V0.0.4
+UPDATE
+Optimization of read loops
+Use of StringBuilder instead of raw string
+Eliminated all raw strings inside the loops

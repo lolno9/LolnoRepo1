@@ -54,49 +54,56 @@ namespace ByteConversor
             string output = testList[1] + testList[0] + "\n";//String used to concatenate data and put inside the new file
 
             Console.WriteLine("Reading bytes of: " + testList[1] + testList[0]);
-
+            StringBuilder sb = new StringBuilder();
+            sb.Append(testList[1] + testList[0] + "\n");
             if (File.Exists(testList[1] + testList[0]))
             {
                 rawData = File.ReadAllBytes(testList[1] + testList[0]).ToList();//Read bytes of file and put it in rawData List
                 Console.WriteLine("File: " + testList[1] + testList[0] + " Opened");
                 int contador = 1;
+                string consoleOut = "/" + rawData.Count + " Bytes";
                 foreach (byte b in rawData)
                 { //Valorate if use ';' separator on bytes
                     //Console.Write(b);
                     byteData.Add(bitConversor.Get8PBinFromByte(b));//Pass each individual byte to bit and put it into byteData List
                     if(contador == rawData.Count())
-                    {
-                        output += b;
+                    {//Use StringBuilder to optimize work and speed
+                        //output += b;
+                        sb.Append(b);
                     } else
-                    {
-                        output += b + ";";
+                    {//Use StringBuilder to optimize work and speed
+                        //output += b + ";";
+                        sb.Append(b + ";");
                     }
                      //Concatenate all bytes from rawData folowed by ';' in the output String
                     //////////////////////////////////////////////////////
                     ///This loop works for refreshing the progress line
-                    string consoleOut = contador + "/" + rawData.Count() + " Bytes";
-                    Console.Write(consoleOut);
-                    foreach(char c in consoleOut)
+                    /*string*/ //consoleOut = contador + "/" + rawCount + " Bytes";
+                    Console.Write(contador+consoleOut);
+                    foreach(char c in contador + consoleOut)
                     {
                         Console.Write("\b");
                     }
                     //////////////////////////////////////////////////////
                     contador++;                    
-                }
+                }///// 660.000 en 15 mins - 1 || 14:50 mins - 2 || 4:57 mins - 3
 
                 Console.WriteLine("\n");
-                output += "\n";//Make new line in output String
+                //output += "\n";//Make new line in output String
+                sb.Append("\n");
                 Console.WriteLine("Processing bytes of: " + testList[1] + testList[0]);
                 contador = 1;
+                consoleOut = "/" + byteData.Count() + " Bytes";
                 foreach (string s in byteData) 
-                {
+                {//Use StringBuilder to optimize work and speed
                     //Console.Write(s);
-                    output += s; //Concatenate all bits in byteData (As they are allways 8-padded, no need to put separator here)
+                    sb.Append(s);
+                    //output += s; //Concatenate all bits in byteData (As they are allways 8-padded, no need to put separator here)
                     //////////////////////////////////////////////////////
                     ///This loop works for refreshing the progress line
-                    string consoleOut = contador + "/" + byteData.Count() + " Bytes";
-                    Console.Write(consoleOut);
-                    foreach (char c in consoleOut)
+                    /*string *///consoleOut = contador + "/" + byteData.Count() + " Bytes";//
+                    Console.Write(contador + consoleOut);//Console.Write(contador+consoleout);
+                    foreach (char c in contador + consoleOut)// in contador+consoleout
                     {
                         Console.Write("\b");
                     }

@@ -14,3 +14,8 @@ Added Bytes to the end of progress check
 
 #V0.0.4
 Corrected error with paths in write
+
+#V0.0.5
+Fix new file name bug
+Use of StringBuilder instead of raw string
+Eliminated all raw strings inside loops

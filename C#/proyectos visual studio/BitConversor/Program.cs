@@ -162,7 +162,7 @@ namespace BitConversor
         //fileInfo[0] = File Name | fileInfo[1] = byte;byte;...byte | fileInfo[2] = 0000110100001010 (concatenated 8-padded bits)
         private static void CreateNewFile(string[] fileInfo)
         {
-            string name = fileInfo[0].Substring(3);
+            string name = fileInfo[0];//.Substring(3);
             DateTime today = DateTime.Now;
             if (File.Exists(/*fileInfo[0]*//*@"C:\"*/home + name))
             {
@@ -192,8 +192,8 @@ namespace BitConversor
         {
             string[] tempArr = fileInfo[1].Split(';');
             List<byte> bytes = new List<byte>();
-            
-            for(int i = 0; i < tempArr.Length; i++)
+            string consoleOut = "/" + tempArr.Count() + " Bytes";
+            for (int i = 0; i < tempArr.Length; i++)
             {
                 if (byte.TryParse(tempArr[i], out byte b))
                 {
@@ -202,9 +202,9 @@ namespace BitConversor
                 }
                 //////////////////////////////////////////////////////
                 ///This loop works for refreshing the progress line
-                string consoleOut = i+1 + "/" + tempArr.Count() + " Bytes";
-                Console.Write(consoleOut);
-                foreach (char c in consoleOut)
+                //string consoleOut = i+1 + "/" + tempArr.Count() + " Bytes";
+                Console.Write((i+1)+consoleOut);
+                foreach (char c in (i+1)+consoleOut)
                 {
                     Console.Write("\b");
                 }

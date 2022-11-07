@@ -7,3 +7,7 @@ Logic to start the processes
 
 #V0.0.2
 UPDATE with correct paths
+
+#V0.0.3
+UPDATE
+Optimization of read and write processes

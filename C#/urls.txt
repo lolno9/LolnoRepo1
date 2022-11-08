@@ -1,0 +1,3 @@
+https://www.gbmb.org/bytes-to-bits
+
+https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay

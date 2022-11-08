@@ -18,3 +18,10 @@ UPDATE
 Optimization of read loops
 Use of StringBuilder instead of raw string
 Eliminated all raw strings inside the loops
+
+#V0.0.5
+UPDATE
+Complete rework of class.
+Use of Span<T> inside the loops
+Changed List<T> for Array[]
+Removed BitConversor class, not needed

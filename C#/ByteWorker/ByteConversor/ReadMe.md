@@ -25,3 +25,7 @@ Complete rework of class.
 Use of Span<T> inside the loops
 Changed List<T> for Array[]
 Removed BitConversor class, not needed
+
+#V0.0.6
+UPDATE
+Instead of create a single string with bytes and a single with bits data, separate line with 256 bytes length each one

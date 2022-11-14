@@ -46,7 +46,12 @@ namespace ByteConversor
 
             Console.WriteLine("\n" + home + inputFile);
             Console.WriteLine("\n\n");
-
+            if (!File.Exists(inputPath + inputFile))
+            {
+                Console.WriteLine("File not found");
+                Pause();
+                return;
+            }
             //Get the total bytes of the file
             int bytes = File.ReadAllBytes(inputPath + inputFile).Length;
             //Read the bytes of the file
@@ -63,6 +68,8 @@ namespace ByteConversor
             StringBuilder streamBit = new StringBuilder();
             //StringBuilder to get only the bytes
             StringBuilder streamByte = new StringBuilder();
+            int cont = 1;
+            Span<char> line = "\n".ToCharArray();
             foreach (var b in spanRawData)
             {
                 if (contador == bytes)
@@ -71,31 +78,42 @@ namespace ByteConversor
                 }
                 else
                 {
-                    streamByte.Append(b + ";");//Fill StringBuilder bytes
+                    if (cont == 256)
+                    {
+                        streamByte.Append(b + line.ToString());
+                        streamBit.Append(Get8PBinFromByte(b) + line.ToString());//Fill StringBuilder bits
+                    }
+                    else
+                    {
+                        streamByte.Append(b + ";");//Fill StringBuilder bytes
+                        streamBit.Append(Get8PBinFromByte(b));
+                    }
                 }
-                streamBit.Append(Get8PBinFromByte(b));//Fill StringBuilder bits
+                //streamBit.Append(Get8PBinFromByte(b));//Fill StringBuilder bits
                 Console.Write(contador + outLine.ToString());//Show progress
                 foreach (var s in contador + outLine.ToString())
                 {
                     Console.Write("\b");//Maintain the progress in just 1 line
                 }
                 contador++;
+                if(cont == 256)
+                    cont = 1;
+                else
+                    cont++;
             }
-
             //Write processed data in a file
-            if (File.Exists(inputPath + outFile))
+            if (File.Exists(home + outFile))
             {
                 File.AppendAllText(home + outFile, inputPath + inputFile + "\n");
                 File.AppendAllText(home + outFile, streamByte.ToString() + "\n");
                 File.AppendAllText(home + outFile, streamBit.ToString() + "\n\n");
             }
-            if (!File.Exists(inputPath + outFile))
+            if (!File.Exists(home + outFile))
             {
                 File.WriteAllText(home + outFile, inputPath + inputFile + "\n");
                 File.AppendAllText(home + outFile, streamByte.ToString() + "\n");
                 File.AppendAllText(home + outFile, streamBit.ToString() + "\n\n");
             }
-
             Pause();
         }
         public static string Get8PBinFromByte(byte bt)//Returns 8-padded binary for a byte input

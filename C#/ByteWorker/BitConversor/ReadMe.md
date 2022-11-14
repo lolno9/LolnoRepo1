@@ -20,4 +20,6 @@ Fix new file name bug
 Use of StringBuilder instead of raw string
 Eliminated all raw strings inside loops
 
-#V0.0.6 //Still Working
+#V0.0.6
+UPDATE
+Class reworked to obtain new format data

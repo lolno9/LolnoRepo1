@@ -22,4 +22,4 @@ Eliminated all raw strings inside loops
 
 #V0.0.6
 UPDATE
-Class reworked to obtain new format data
+Class reworked to read new formated data

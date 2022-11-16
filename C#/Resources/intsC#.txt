@@ -1,0 +1,153 @@
+INT16
+Int16 occupies 2 bytes
+Int16 type is: System.Int16
+Int16 MIN value: -32767 == new byte[]{1,128,255,255,255,255,255,255};
+Int16 MAX value: 32767 == new byte[]{255, 127, 0, 0, 0, 0, 0, 0};
+
+a = 12345, b = -12345
+a = 57 48
+
+INT32
+Int32 occupies 4 bytes
+Int32 type is: System.Int32
+Int32 MIN value: -2147483647 == new byte[]{1,0,0,128,255,255,255,255};
+Int32 MAX value: 2147483647 == new byte[]{255,255,255,127,0,0,0,0};
+
+a = 289812345, b = -290012345
+
+INT
+int occupies 4 bytes
+int type is: System.Int32
+int MIN value: -2147483647 == new byte[]{1,0,0,128,255,255,255,255};
+int MAX value: 2147483647 == new byte[]{255,255,255,127,0,0,0,0};
+
+x = 289812345, y = -290012345
+a = 121 47 70 17
+
+INT64
+Int64 occupies 8 bytes
+Int64 type is: System.Int64
+Int64 MIN value: -9223372036854775807 == new byte[]{1,0,0,0,0,0,0,128};
+Int64 MAX value: 9223372036854775807 == new byte[]{255,255,255,255,255,255,255,127};
+
+a = 289818278722345, b = -290287827012345
+a = 41 123 141 147 150 7 1 0
+-----------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+		/*long[] check = {32767, 2147483647, 9223372036854775807};
+		long[] negativeCheck = {-32767, -2147483647, -9223372036854775807};
+		foreach(var v in check)
+		{
+			Console.Write(v + " = \t");//+ "\t" + BitConverter.GetBytes(v));
+			foreach(var b in BitConverter.GetBytes(v))
+			{
+				Console.Write(b + ",");
+			}
+			Console.WriteLine();
+		}
+		foreach(var v in negativeCheck)
+		{
+			Console.Write(v + " = \t");
+			foreach(var b in BitConverter.GetBytes(v))
+			{
+				Console.Write(b + ",");
+			}
+			Console.WriteLine();
+		}
+		var MinInt16 = new byte[]{1,128,255,255,255,255,255,255};
+		var MaxInt16 = new byte[]{255, 127, 0, 0, 0, 0, 0, 0};
+		var MinInt32 = new byte[]{1,0,0,128,255,255,255,255};
+		var MaxInt32 = new byte[]{255,255,255,127,0,0,0,0};
+		var MinInt64 = new byte[]{1,0,0,0,0,0,0,128};
+		var MaxInt64 = new byte[]{255,255,255,255,255,255,255,127};
+		Console.WriteLine("Int16 Min = " + BitConverter.ToInt16(MinInt16, 0));
+		Console.WriteLine("Int16 Max = " + BitConverter.ToInt16(MaxInt16, 0));
+		Console.WriteLine("Int32 Min = " + BitConverter.ToInt32(MinInt32, 0));
+		Console.WriteLine("Int32 Max = " + BitConverter.ToInt32(MaxInt32, 0));
+		Console.WriteLine("Int64 Min = " + BitConverter.ToInt64(MinInt64, 0));
+		Console.WriteLine("Int64 Max = " + BitConverter.ToInt64(MaxInt64, 0));*/
+		string s = "String de prueba haber que se puede hacer";
+		long[] longs = new long[s.Length];
+		for(int i=0; i<s.Length; i++)
+		{
+			longs[i] = Convert.ToInt64(s[i]);
+		}
+		foreach(long l in longs)
+		{
+			Console.Write(l + " ");
+		}
+			Console.WriteLine();
+		for(int i=0; i< longs.Count(); i++)
+		{
+			Console.Write("Character = " + s[i] + " = Long Integer = " + longs[i] + " =  bytes = ");
+			foreach(var b in BitConverter.GetBytes((UInt64)s[i]))
+			{
+				Console.Write(b + " ");
+			}
+			Console.WriteLine();
+		}
+		foreach(var v in BitConverter.GetBytes((UInt64)2000))
+		{
+			Console.Write(v + " ");
+		}
+	}
+}
+------------------------------------------------------------------
+83 116 114 105 110 103 32 100 101 32 112 114 117 101 98 97 32 104 97 98 101 114 32 113 117 101 32 115 101 32 112 117 101 100 101 32 104 97 99 101 114 
+Character = S = Long Integer = 83 =  bytes = 83 0 0 0 0 0 0 0 
+Character = t = Long Integer = 116 =  bytes = 116 0 0 0 0 0 0 0 
+Character = r = Long Integer = 114 =  bytes = 114 0 0 0 0 0 0 0 
+Character = i = Long Integer = 105 =  bytes = 105 0 0 0 0 0 0 0 
+Character = n = Long Integer = 110 =  bytes = 110 0 0 0 0 0 0 0 
+Character = g = Long Integer = 103 =  bytes = 103 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = d = Long Integer = 100 =  bytes = 100 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = p = Long Integer = 112 =  bytes = 112 0 0 0 0 0 0 0 
+Character = r = Long Integer = 114 =  bytes = 114 0 0 0 0 0 0 0 
+Character = u = Long Integer = 117 =  bytes = 117 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character = b = Long Integer = 98 =  bytes = 98 0 0 0 0 0 0 0 
+Character = a = Long Integer = 97 =  bytes = 97 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = h = Long Integer = 104 =  bytes = 104 0 0 0 0 0 0 0 
+Character = a = Long Integer = 97 =  bytes = 97 0 0 0 0 0 0 0 
+Character = b = Long Integer = 98 =  bytes = 98 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character = r = Long Integer = 114 =  bytes = 114 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = q = Long Integer = 113 =  bytes = 113 0 0 0 0 0 0 0 
+Character = u = Long Integer = 117 =  bytes = 117 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = s = Long Integer = 115 =  bytes = 115 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = p = Long Integer = 112 =  bytes = 112 0 0 0 0 0 0 0 
+Character = u = Long Integer = 117 =  bytes = 117 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character = d = Long Integer = 100 =  bytes = 100 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character =   = Long Integer = 32 =  bytes = 32 0 0 0 0 0 0 0 
+Character = h = Long Integer = 104 =  bytes = 104 0 0 0 0 0 0 0 
+Character = a = Long Integer = 97 =  bytes = 97 0 0 0 0 0 0 0 
+Character = c = Long Integer = 99 =  bytes = 99 0 0 0 0 0 0 0 
+Character = e = Long Integer = 101 =  bytes = 101 0 0 0 0 0 0 0 
+Character = r = Long Integer = 114 =  bytes = 114 0 0 0 0 0 0 0 
+208 7 0 0 0 0 0 0

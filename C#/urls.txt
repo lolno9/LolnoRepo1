@@ -1,3 +1,5 @@
 https://www.gbmb.org/bytes-to-bits
 
 https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay
+
+https://www.delftstack.com/howto/csharp/csharp-on-linux/#:~:text=The%20Visual%20Studio%20Code%20editor%20and%20its%20C%23,execute%20C%23%20apps%2C%20you%20need%20the%20.NET%20runtime.

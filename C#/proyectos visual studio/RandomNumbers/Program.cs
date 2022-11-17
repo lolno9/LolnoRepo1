@@ -10,35 +10,19 @@ using System.Runtime.CompilerServices;
 using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-namespace ConsoleApp2
+namespace RandomNumbers
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            //Declare de array with desired length
-            byte[] test = new byte[256];
-            //Declare de RNG
-            var rng = RandomNumberGenerator.Create();
-            //Get our first 256 Random bytes
-            rng.GetBytes(test);
-            
-            //Show bytes
-            foreach(var v in test)
-            {
-                Console.Write(v);
-            }
-            Console.WriteLine("\nTotal length = " + test.Length + "\n");
-            //Get B64 string from bytes
-            Console.WriteLine("\n\n"+Convert.ToBase64String(test));
-            Console.WriteLine("\n\n");
-
-            //Convert byte to char
-            foreach(byte b in test)
-            {
-                Console.Write(Convert.ToChar(b));
-            }
+            RandomNumbers rn = new RandomNumbers(256);
+            rn.ShowContent(rn.NUMBERS);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(rn.ToString());
             Pause();
+
         }
         public static void Pause()
         {

@@ -22,7 +22,7 @@ namespace RandomNumbers
             //Console.WriteLine();
             //Console.WriteLine(rn.ToString());
 
-            RNGNumbers rng = new RNGNumbers(1000);
+            RNGNumbers rng = new RNGNumbers(1600);
             Int32 check = (rng.DATA.Length > 8) ? rng.DATA.Length / 8 : rng.DATA.Length;
             //Console.Write(rng.GetInt64());
             //int contador = 0;
@@ -40,7 +40,11 @@ namespace RandomNumbers
             //Console.WriteLine("\n\n" + contador);
             if(rng.DATA.Length <= 8)
             {
-                Console.WriteLine(rng.GetInt64());
+                Console.WriteLine(rng.GetInt64(0));
+                foreach (var v2 in BitConverter.GetBytes(rng.GetInt64(0)))
+                {
+                    Console.Write(v2 + " ");
+                }
             } 
             if(rng.DATA.Length > 8)
             {
@@ -52,9 +56,14 @@ namespace RandomNumbers
                         Console.Write(v + "\n");
                     else
                         Console.Write(v + " \t");
+                    foreach(var v2 in BitConverter.GetBytes(v))
+                    {
+                        Console.Write(v2 + " ");
+                    }
+                    Console.WriteLine();
                 }
             }
-
+            
             Pause();
             //Random r = new Random();
             //Console.WriteLine(r.NextInt64(Int64.MinValue, Int64.MaxValue));

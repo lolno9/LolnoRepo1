@@ -26,6 +26,10 @@ namespace RandomNumbers
         {
             randomGenerator.GetBytes(numbers);
         }
+        public void ResetCounter()
+        {
+            counter = 0;
+        }
         public long[] GetLongs(byte[] bytes)
         {
             long[] longs = new long[bytes.Length];
@@ -103,6 +107,7 @@ namespace RandomNumbers
         }
         public override string ToString()
         {
+            ResetCounter();
             StringBuilder stringBuilder = new StringBuilder();
             foreach (long v in NUMBERS)//foreach(var v in test)
             {

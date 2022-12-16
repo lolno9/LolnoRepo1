@@ -31,6 +31,17 @@ namespace RandomNumbers
             counter = 0;
             FillNumbers();//Fill array
         }
+        public RNGNumbers(Int32 length, Int32 min, Int32 max)//Constructor with length, recieves the desired length for the array
+        {
+            randomNumberGenerator = RandomNumberGenerator.Create();
+            if (length < 8 || length % 8 != 0)//If array length is less than 8 or not divisible by 8
+            {
+                length = SetCorrectLength(length);//Set correct length
+            }
+            data = new byte[length];
+            counter = 0;
+            FillNumbers();//Fill array
+        }
         public Int64[] GetAllInts()
         {
             Int64[] ints = new Int64[data.Length/8];
@@ -83,6 +94,20 @@ namespace RandomNumbers
         public void FillNumbers()
         {
             randomNumberGenerator.GetBytes(data);
+        }
+        public Int16 GetInt16(Int32 min, Int32 max)
+        {
+            Int16 check = 0;
+            bool isgood = false;
+            //randomNumberGenerator.GetBytes(data);
+            do
+            {
+                randomNumberGenerator.GetBytes(data);
+                check = BitConverter.ToInt16(data, 0);
+                if (check >= min && check <= max)
+                    isgood = true;
+            } while (!isgood);
+            return check;
         }
         public void ResetCounter()
         {

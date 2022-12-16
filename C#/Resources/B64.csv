@@ -1,9 +1,9 @@
-index;name;decimal;binario;hexadecimal
+id;name;decimal;binario;hexadecimal
 0;A;65;01000001;0x41
 1;B;66;01000010;0x42
 2;C;67;01000011;0x43
 3;D;68;01000100;0x44
-4;E;69;1000101;0x45
+4;E;69;01000101;0x45
 5;F;70;01000110;0x46
 6;G;71;01000111;0x47
 7;H;72;01001000;0x48
